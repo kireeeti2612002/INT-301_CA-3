@@ -1,5 +1,5 @@
 # INT-301_CA-3
-Investigate the system run time state of a device (RAM), extract the information present in RAM with the help of volatility Framework.
+Q) Investigate the system run time state of a device (RAM), extract the information present in RAM with the help of volatility Framework.
 
 I have uploaded the files of Commands and outputs of using volatility Framework to extract the information present in memory dump.
 

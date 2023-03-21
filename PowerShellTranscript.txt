@@ -1,0 +1,327 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20230321233906
+Username: KIREETI-ZIGGLER\VENKAT
+RunAs User: KIREETI-ZIGGLER\VENKAT
+Configuration Name: 
+Machine: KIREETI-ZIGGLER (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3492
+PSVersion: 5.1.19041.2364
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.2364
+BuildVersion: 10.0.19041.2364
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\VENKAT\Desktop\PowerShellTranscript.txt
+PS C:\WINDOWS\system32> cd D:\volatility3-1.0.0\volatility3-1.0.0
+PS D:\volatility3-1.0.0\volatility3-1.0.0> ls
+
+
+    Directory: D:\volatility3-1.0.0\volatility3-1.0.0
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          2/1/2021   9:00 PM                .github
+d-----          2/1/2021   9:00 PM                development
+d-----          2/1/2021   9:00 PM                doc
+d-----         3/21/2023  10:13 PM                volatility3
+------          2/1/2021   9:00 PM            394 .gitignore
+------          2/1/2021   9:00 PM            532 .readthedocs.yml
+------          2/1/2021   9:00 PM           7940 .style.yapf
+------          2/1/2021   9:00 PM           3920 LICENSE.txt
+------          2/1/2021   9:00 PM            180 MANIFEST.in
+------          2/1/2021   9:00 PM             79 mypy.ini
+------          2/1/2021   9:00 PM           5001 README.md
+------          2/1/2021   9:00 PM           2089 setup.py
+-a----          2/1/2021   9:00 PM            290 vol.py
+------          2/1/2021   9:00 PM           5423 vol.spec
+------          2/1/2021   9:00 PM            297 volshell.py
+------          2/1/2021   9:00 PM           2963 volshell.spec
+
+
+PS D:\volatility3-1.0.0\volatility3-1.0.0> python.exe .\vol.py -f D:\volatility3-1.0.0\memdump.mem windows.info
+Volatility 3 Framework 1.0.0
+Progress:  100.00               PDB scanning finished
+Variable        Value
+
+Kernel Base     0xf80507000000
+DTB     0x1aa000
+Symbols file:///D:/volatility3-1.0.0/volatility3-1.0.0/volatility3/symbols/windows/ntkrnlmp.pdb/5F0CF5D532F385333A9B4ABA25CA6596-1.json.xz
+Is64Bit True
+IsPAE   False
+primary 0 WindowsIntel32e
+memory_layer    1 FileLayer
+KdVersionBlock  0xf80507c0f388
+Major/Minor     15.19041
+MachineType     34404
+KeNumberProcessors      8
+SystemTime      2023-03-21 15:36:15
+NtSystemRoot    C:\WINDOWS
+NtProductType   NtProductWinNt
+NtMajorVersion  10
+NtMinorVersion  0
+PE MajorOperatingSystemVersion  10
+PE MinorOperatingSystemVersion  0
+PE Machine      34404
+PE TimeDateStamp        Sun Mar  4 22:56:30 2074
+PS D:\volatility3-1.0.0\volatility3-1.0.0> python.exe .\vol.py -f D:\volatility3-1.0.0\memdump.mem windows.pslist
+Volatility 3 Framework 1.0.0
+Progress:  100.00               PDB scanning finished
+PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       Wow64   CreateTime      ExitTime        File output
+
+4       0       System  0xac8fd6c6c040  255     -       N/A     False   2023-03-09 03:39:45.000000      N/A     Disabled
+124     4       Registry        0xac8fd6d15080  4       -       N/A     False   2023-03-09 03:38:39.000000      N/A     Disabled
+704     4       smss.exe        0xac8ff7b300c0  2       -       N/A     False   2023-03-09 03:39:48.000000      N/A     Disabled
+796     780     csrss.exe       0xac8ff7ea8080  16      -       0       False   2023-03-09 03:42:29.000000      N/A     Disabled
+896     780     wininit.exe     0xac8ffa888080  1       -       0       False   2023-03-09 03:42:37.000000      N/A     Disabled
+968     896     services.exe    0xac8ffabc0080  8       -       0       False   2023-03-09 03:42:37.000000      N/A     Disabled
+992     896     WerFault.exe    0xac8ffb34a080  0       -       0       False   2023-03-09 03:42:37.000000      2023-03-09 04:07:05.000000      Disabled
+1020    896     lsass.exe       0xac8ffb356080  12      -       0       False   2023-03-09 03:42:39.000000      N/A     Disabled
+732     888     winlogon.exe    0xac8ffb399180  0       -       1       False   2023-03-09 03:42:40.000000      2023-03-09 05:27:54.000000      Disabled
+1124    968     svchost.exe     0xac8ffb46c080  29      -       0       False   2023-03-09 03:42:44.000000      N/A     Disabled
+1180    896     fontdrvhost.ex  0xac8ffb348080  5       -       0       False   2023-03-09 03:42:46.000000      N/A     Disabled
+1236    968     WUDFHost.exe    0xac8ffb517080  11      -       0       False   2023-03-09 03:42:46.000000      N/A     Disabled
+1276    968     svchost.exe     0xac8ffb543240  16      -       0       False   2023-03-09 03:42:46.000000      N/A     Disabled
+1320    968     svchost.exe     0xac8ffb548080  4       -       0       False   2023-03-09 03:42:46.000000      N/A     Disabled
+1604    968     svchost.exe     0xac8fd6d05080  12      -       0       False   2023-03-09 03:42:50.000000      N/A     Disabled
+1636    968     svchost.exe     0xac8ffaba5080  5       -       0       False   2023-03-09 03:42:50.000000      N/A     Disabled
+1644    968     svchost.exe     0xac8fd6cea080  6       -       0       False   2023-03-09 03:42:50.000000      N/A     Disabled
+1808    968     IntelCpHDCPSvc  0xac8fd6da4080  3       -       0       False   2023-03-09 03:42:50.000000      N/A     Disabled
+1840    968     svchost.exe     0xac8fd6da2080  8       -       0       False   2023-03-09 03:42:50.000000      N/A     Disabled
+1852    968     svchost.exe     0xac8ffb6850c0  5       -       0       False   2023-03-09 03:42:50.000000      N/A     Disabled
+1920    968     svchost.exe     0xac8fd6d95080  2       -       0       False   2023-03-09 03:42:52.000000      N/A     Disabled
+2008    968     IntelCpHeciSvc  0xac8ff9263080  3       -       0       False   2023-03-09 03:42:52.000000      N/A     Disabled
+908     968     igfxCUIService  0xac8ff9266080  2       -       0       False   2023-03-09 03:42:52.000000      N/A     Disabled
+2132    968     svchost.exe     0xac8ff93c4080  4       -       0       False   2023-03-09 03:42:55.000000      N/A     Disabled
+2220    968     svchost.exe     0xac8ff93ef0c0  9       -       0       False   2023-03-09 03:42:56.000000      N/A     Disabled
+2268    968     SynTPEnhServic  0xac8ff93f4080  7       -       0       False   2023-03-09 03:43:01.000000      N/A     Disabled
+2364    968     svchost.exe     0xac8ff93fa080  15      -       0       False   2023-03-09 03:43:03.000000      N/A     Disabled
+2444    968     svchost.exe     0xac8ff93d0080  3       -       0       False   2023-03-09 03:43:06.000000      N/A     Disabled
+2488    968     svchost.exe     0xac8ff93660c0  18      -       0       False   2023-03-09 03:43:06.000000      N/A     Disabled
+2556    968     svchost.exe     0xac8ff9735080  16      -       0       False   2023-03-09 03:43:07.000000      N/A     Disabled
+2704    968     svchost.exe     0xac8ff974b080  3       -       0       False   2023-03-09 03:43:08.000000      N/A     Disabled
+2796    968     svchost.exe     0xac8ff97dc080  6       -       0       False   2023-03-09 03:43:09.000000      N/A     Disabled
+2836    968     NVDisplay.Cont  0xac8ff9810080  10      -       0       False   2023-03-09 03:43:09.000000      N/A     Disabled
+2892    968     svchost.exe     0xac8ff9830080  3       -       0       False   2023-03-09 03:43:10.000000      N/A     Disabled
+2948    968     svchost.exe     0xac8ff988d080  2       -       0       False   2023-03-09 03:43:10.000000      N/A     Disabled
+2988    968     svchost.exe     0xac8ff98a5080  5       -       0       False   2023-03-09 03:43:10.000000      N/A     Disabled
+2996    968     svchost.exe     0xac8ff98a6080  3       -       0       False   2023-03-09 03:43:10.000000      N/A     Disabled
+3056    968     svchost.exe     0xac8ff98e0080  3       -       0       False   2023-03-09 03:43:11.000000      N/A     Disabled
+3064    968     svchost.exe     0xac8ff98e3080  7       -       0       False   2023-03-09 03:43:11.000000      N/A     Disabled
+2092    4       MemCompression  0xac8ff98e1040  54      -       N/A     False   2023-03-09 03:43:11.000000      N/A     Disabled
+3176    968     svchost.exe     0xac8ffcbc3080  9       -       0       False   2023-03-09 03:43:17.000000      N/A     Disabled
+3268    968     svchost.exe     0xac8ffcd28080  4       -       0       False   2023-03-09 03:43:18.000000      N/A     Disabled
+3648    968     svchost.exe     0xac8ffb1430c0  15      -       0       False   2023-03-09 03:43:23.000000      N/A     Disabled
+3656    968     svchost.exe     0xac8ffb14f080  6       -       0       False   2023-03-09 03:43:23.000000      N/A     Disabled
+3664    968     svchost.exe     0xac8ffb152080  10      -       0       False   2023-03-09 03:43:23.000000      N/A     Disabled
+3892    968     svchost.exe     0xac8ffb80c080  5       -       0       False   2023-03-09 03:43:25.000000      N/A     Disabled
+3972    968     svchost.exe     0xac8ffb8560c0  9       -       0       False   2023-03-09 03:43:26.000000      N/A     Disabled
+4044    968     svchost.exe     0xac8ffb827080  14      -       0       False   2023-03-09 03:43:29.000000      N/A     Disabled
+2300    968     svchost.exe     0xac8ffb849080  5       -       0       False   2023-03-09 03:43:40.000000      N/A     Disabled
+2340    968     spoolsv.exe     0xac8ffb84c080  8       -       0       False   2023-03-09 03:43:48.000000      N/A     Disabled
+3512    4044    wlanext.exe     0xac8ffb848080  9       -       0       False   2023-03-09 03:43:48.000000      N/A     Disabled
+3488    968     svchost.exe     0xac8ffb84d300  13      -       0       False   2023-03-09 03:43:48.000000      N/A     Disabled
+3500    3512    conhost.exe     0xac8ff93e02c0  2       -       0       False   2023-03-09 03:43:49.000000      N/A     Disabled
+2244    968     svchost.exe     0xac8ffb82c240  5       -       0       False   2023-03-09 03:43:51.000000      N/A     Disabled
+1936    968     svchost.exe     0xac8ffba42080  2       -       0       False   2023-03-09 03:44:28.000000      N/A     Disabled
+2932    1936    dasHost.exe     0xac8ffbb08080  3       -       0       False   2023-03-09 03:44:34.000000      N/A     Disabled
+2848    968     svchost.exe     0xac8ffbbe3080  9       -       0       False   2023-03-09 03:44:36.000000      N/A     Disabled
+3700    968     svchost.exe     0xac8ffbc08080  9       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+3704    968     svchost.exe     0xac8ffbc0e080  14      -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+3980    968     svchost.exe     0xac8ffbc10080  8       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+2652    968     svchost.exe     0xac8ffbc18080  18      -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+2620    968     svchost.exe     0xac8ffbc1b080  6       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+4124    968     svchost.exe     0xac8ffbc52080  19      -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+4140    968     RtkBtManServ.e  0xac8ffbc75080  2       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+4168    968     esif_uf.exe     0xac8ffbc570c0  3       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+4176    968     g2svc.exe       0xac8ffbc7d0c0  0       -       0       True    2023-03-09 03:44:39.000000      2023-03-09 03:45:45.000000      Disabled
+4192    968     vmnat.exe       0xac8ffbc79080  4       -       0       True    2023-03-09 03:44:39.000000      N/A     Disabled
+4220    968     svchost.exe     0xac8ffbc55080  3       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+4228    968     svchost.exe     0xac8ffbc50080  9       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+4248    968     svchost.exe     0xac8ffbc63080  2       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+4260    968     svchost.exe     0xac8ffbc5f080  5       -       0       False   2023-03-09 03:44:39.000000      N/A     Disabled
+4292    968     vmnetdhcp.exe   0xac8ffbc5e080  2       -       0       True    2023-03-09 03:44:39.000000      N/A     Disabled
+4468    968     SECOMN64.exe    0xac8ffbddf080  6       -       0       False   2023-03-09 03:44:40.000000      N/A     Disabled
+4476    968     SynAudSrv.exe   0xac8ffbde30c0  2       -       0       False   2023-03-09 03:44:40.000000      N/A     Disabled
+4496    968     AppHelperCap.e  0xac8ffbdde080  4       -       0       False   2023-03-09 03:44:42.000000      N/A     Disabled
+4508    968     RtkAudUService  0xac8ffbd9f080  9       -       0       False   2023-03-09 03:44:42.000000      N/A     Disabled
+4516    968     vmware-usbarbi  0xac8ffbda1100  3       -       0       False   2023-03-09 03:44:42.000000      N/A     Disabled
+4524    968     LMS.exe 0xac8ffbce70c0  3       -       0       True    2023-03-09 03:44:42.000000      N/A     Disabled
+4624    968     svchost.exe     0xac8ffbcf5080  14      -       0       False   2023-03-09 03:44:45.000000      N/A     Disabled
+4696    968     MsMpEng.exe     0xac8ff101c080  48      -       0       False   2023-03-09 03:44:47.000000      N/A     Disabled
+4720    968     DiagsCap.exe    0xac8ffcbe7080  3       -       0       False   2023-03-09 03:44:47.000000      N/A     Disabled
+4728    968     RstMwService.e  0xac8ff1021080  3       -       0       False   2023-03-09 03:44:47.000000      N/A     Disabled
+4744    968     NetworkCap.exe  0xac8ffbeee080  3       -       0       False   2023-03-09 03:44:47.000000      N/A     Disabled
+4752    968     SysInfoCap.exe  0xac8ff10130c0  10      -       0       False   2023-03-09 03:44:48.000000      N/A     Disabled
+4824    968     svchost.exe     0xac8ffbf4c080  3       -       0       False   2023-03-09 03:44:49.000000      N/A     Disabled
+1416    968     jhi_service.ex  0xac8ffc0020c0  2       -       0       False   2023-03-09 03:44:55.000000      N/A     Disabled
+1756    968     svchost.exe     0xac8ffc03a240  5       -       0       False   2023-03-09 03:45:02.000000      N/A     Disabled
+5332    968     svchost.exe     0xac8ffc044240  13      -       0       False   2023-03-09 03:45:08.000000      N/A     Disabled
+5720    968     svchost.exe     0xac8ffbc5a080  4       -       0       False   2023-03-09 03:45:44.000000      N/A     Disabled
+8948    968     svchost.exe     0xac8ffad8a080  4       -       0       False   2023-03-09 03:47:30.000000      N/A     Disabled
+4584    1124    WmiPrvSE.exe    0xac8ffbbed080  4       -       0       False   2023-03-09 03:47:57.000000      N/A     Disabled
+1904    968     svchost.exe     0xac8ffc263080  9       -       0       False   2023-03-09 03:48:00.000000      N/A     Disabled
+9548    968     svchost.exe     0xac8ffd79d080  8       -       0       False   2023-03-09 03:48:22.000000      N/A     Disabled
+9668    968     svchost.exe     0xac8ffd7cd080  0       -       0       False   2023-03-09 03:48:27.000000      2023-03-09 03:49:09.000000      Disabled
+10180   968     svchost.exe     0xac8ffd99d080  11      -       0       False   2023-03-09 03:48:47.000000      N/A     Disabled
+9284    1124    MoUsoCoreWorke  0xac8ffd708080  8       -       0       False   2023-03-09 03:49:56.000000      N/A     Disabled
+10196   968     svchost.exe     0xac8ffd7c3080  4       -       0       False   2023-03-09 03:49:59.000000      N/A     Disabled
+568     1124    unsecapp.exe    0xac8ff9896080  3       -       0       False   2023-03-09 03:50:03.000000      N/A     Disabled
+9744    968     SgrmBroker.exe  0xac81071cd080  7       -       0       False   2023-03-09 03:51:09.000000      N/A     Disabled
+9900    9200    GoogleCrashHan  0xac8ffaea50c0  3       -       0       True    2023-03-09 03:51:20.000000      N/A     Disabled
+10256   9200    GoogleCrashHan  0xac8ff6480080  3       -       0       False   2023-03-09 03:51:30.000000      N/A     Disabled
+9300    968     svchost.exe     0xac8ffae19080  8       -       0       False   2023-03-09 03:53:19.000000      N/A     Disabled
+10812   968     SearchIndexer.  0xac8ffaea9080  16      -       0       False   2023-03-09 03:53:43.000000      N/A     Disabled
+6024    968     NisSrv.exe      0xac8fff628080  8       -       0       False   2023-03-09 03:53:58.000000      N/A     Disabled
+9116    968     svchost.exe     0xac8ffd951080  5       -       0       False   2023-03-09 03:55:58.000000      N/A     Disabled
+5288    968     svchost.exe     0xac8fff6d3080  7       -       0       False   2023-03-09 03:56:05.000000      N/A     Disabled
+11556   968     svchost.exe     0xac8107667080  6       -       0       False   2023-03-09 03:56:11.000000      N/A     Disabled
+11700   968     svchost.exe     0xac8fff0f2080  2       -       0       False   2023-03-09 03:56:16.000000      N/A     Disabled
+11820   968     svchost.exe     0xac8fff62c2c0  3       -       0       False   2023-03-09 03:56:18.000000      N/A     Disabled
+11660   968     svchost.exe     0xac8fff997080  4       -       0       False   2023-03-09 03:57:48.000000      N/A     Disabled
+11020   2796    sihost.exe      0xac8fffff7080  0       -       1       False   2023-03-09 03:58:40.000000      2023-03-09 05:27:40.000000      Disabled
+3008    4752    BridgeCommunic  0xac8ff9f8c080  0       -       1       False   2023-03-09 03:58:40.000000      2023-03-09 04:41:29.000000      Disabled
+9816    2268    SynTPEnh.exe    0xac8ff3f16080  0       -       1       False   2023-03-09 03:58:42.000000      2023-03-09 05:27:34.000000      Disabled
+12008   968     svchost.exe     0xac8ff3f0c080  0       -       1       False   2023-03-09 03:58:46.000000      2023-03-09 05:27:50.000000      Disabled
+12268   968     PresentationFo  0xac810768b080  4       -       0       False   2023-03-09 03:58:46.000000      N/A     Disabled
+11152   11356   explorer.exe    0xac8ff3f0a080  0       -       1       False   2023-03-09 03:58:47.000000      2023-03-09 05:27:40.000000      Disabled
+7944    968     svchost.exe     0xac810767b240  0       -       1       False   2023-03-09 03:58:48.000000      2023-03-09 05:27:45.000000      Disabled
+6588    968     svchost.exe     0xac8fff8ec080  7       -       0       False   2023-03-09 03:58:48.000000      N/A     Disabled
+8716    4752    BridgeCommunic  0xac81071df080  0       -       1       False   2023-03-09 03:58:50.000000      2023-03-09 05:27:31.000000      Disabled
+8584    908     igfxEM.exe      0xac8fffaf9080  0       -       1       False   2023-03-09 03:58:51.000000      2023-03-09 05:27:31.000000      Disabled
+7736    4752    BridgeCommunic  0xac8ffc58f080  0       -       1       False   2023-03-09 03:59:00.000000      2023-03-09 05:27:31.000000      Disabled
+4204    4752    BridgeCommunic  0xac81067f30c0  0       -       1       False   2023-03-09 03:59:10.000000      2023-03-09 04:09:55.000000      Disabled
+6364    968     svchost.exe     0xac8ffcc1f080  5       -       0       False   2023-03-09 04:00:07.000000      N/A     Disabled
+8760    968     svchost.exe     0xac8ff9dea2c0  2       -       0       False   2023-03-09 04:00:49.000000      N/A     Disabled
+11424   968     svchost.exe     0xac810767f300  8       -       0       False   2023-03-09 04:01:48.000000      N/A     Disabled
+15024   968     SecurityHealth  0xac8ffac93080  6       -       0       False   2023-03-09 04:02:53.000000      N/A     Disabled
+5924    968     svchost.exe     0xac8ffecf0300  4       -       0       False   2023-03-09 04:07:58.000000      N/A     Disabled
+15228   4752    BridgeCommunic  0xac8fff9a3080  0       -       1       False   2023-03-09 04:09:55.000000      2023-03-09 05:27:31.000000      Disabled
+8124    4752    BridgeCommunic  0xac8fff71f240  0       -       1       False   2023-03-09 04:10:05.000000      2023-03-09 05:27:31.000000      Disabled
+9344    4752    BridgeCommunic  0xac8ffa19e080  0       -       1       False   2023-03-09 04:10:15.000000      2023-03-09 05:27:31.000000      Disabled
+8692    968     svchost.exe     0xac8ff9449080  6       -       0       False   2023-03-09 04:12:55.000000      N/A     Disabled
+14168   4752    BridgeCommunic  0xac8ffb74e340  0       -       1       False   2023-03-09 04:20:25.000000      2023-03-09 04:20:43.000000      Disabled
+12912   4752    BridgeCommunic  0xac8ffad10080  0       -       1       False   2023-03-09 04:20:43.000000      2023-03-09 04:20:53.000000      Disabled
+12332   4752    BridgeCommunic  0xac8ffac4f080  0       -       1       False   2023-03-09 04:20:53.000000      2023-03-09 04:30:53.000000      Disabled
+7836    1124    backgroundTask  0xac8ff6432080  0       -       1       False   2023-03-09 04:27:11.000000      2023-03-09 04:30:37.000000      Disabled
+1252    4496    BridgeCommunic  0xac8ffa177080  0       -       1       False   2023-03-09 04:28:18.000000      2023-03-09 04:30:37.000000      Disabled
+3516    4752    BridgeCommunic  0xac8ffc7db300  0       -       1       False   2023-03-09 04:30:54.000000      2023-03-09 04:31:11.000000      Disabled
+7176    4752    BridgeCommunic  0xac8fff734300  0       -       1       False   2023-03-09 04:31:11.000000      2023-03-09 04:41:24.000000      Disabled
+11132   3196    VirtualBoxVM.e  0xac8ffce580c0  0       -       1       False   2023-03-09 04:31:43.000000      2023-03-09 05:26:36.000000      Disabled
+16220   968     svchost.exe     0xac8fff6d5080  5       -       0       False   2023-03-09 04:38:11.000000      N/A     Disabled
+16896   4752    BridgeCommunic  0xac8105a150c0  0       -       1       False   2023-03-09 04:41:24.000000      2023-03-09 04:41:29.000000      Disabled
+12700   4752    BridgeCommunic  0xac8ffd95d080  0       -       1       False   2023-03-09 04:41:29.000000      2023-03-09 04:51:29.000000      Disabled
+8784    4752    BridgeCommunic  0xac8ffc0d1080  0       -       1       False   2023-03-09 04:51:29.000000      2023-03-09 04:51:30.000000      Disabled
+3312    4752    BridgeCommunic  0xac8ff98cc080  0       -       1       False   2023-03-09 04:51:30.000000      2023-03-09 05:01:30.000000      Disabled
+13664   4752    BridgeCommunic  0xac8ffd60c100  0       -       1       False   2023-03-09 05:01:30.000000      2023-03-09 05:01:30.000000      Disabled
+3460    4752    BridgeCommunic  0xac8ffe89f100  0       -       1       False   2023-03-09 05:01:30.000000      2023-03-09 05:27:24.000000      Disabled
+5836    968     svchost.exe     0xac8fffa68080  3       -       0       False   2023-03-09 09:09:05.000000      N/A     Disabled
+12312   968     svchost.exe     0xac8107fea100  3       -       0       False   2023-03-09 10:10:01.000000      N/A     Disabled
+6248    4696    MpCopyAccelera  0xac81086aa080  4       -       0       False   2023-03-09 10:12:10.000000      N/A     Disabled
+9204    6968    Code.exe        0xac8fface3080  0       -       2       False   2023-03-09 10:12:56.000000      2023-03-09 10:13:36.000000      Disabled
+6948    6968    cmd.exe 0xac8107030080  0       -       2       False   2023-03-09 10:13:30.000000      2023-03-09 10:13:36.000000      Disabled
+17008   11964   Code.exe        0xac8ffce6f080  0       -       2       False   2023-03-09 10:13:39.000000      2023-03-09 10:28:56.000000      Disabled
+16672   11164   Code.exe        0xac810a3c7080  0       -       2       False   2023-03-09 10:13:56.000000      2023-03-09 10:28:56.000000      Disabled
+12536   7688    Code.exe        0xac8ffbba70c0  0       -       2       False   2023-03-09 10:28:56.000000      2023-03-09 10:28:56.000000      Disabled
+3316    7080    Code.exe        0xac8ffbc9b080  0       -       2       False   2023-03-09 10:29:55.000000      2023-03-09 10:31:49.000000      Disabled
+3028    13168   csrss.exe       0xac8ffd869080  14      -       3       False   2023-03-09 10:31:49.000000      N/A     Disabled
+16932   13168   winlogon.exe    0xac8108690080  7       -       3       False   2023-03-09 10:31:50.000000      N/A     Disabled
+12292   16932   dwm.exe 0xac8ffbbd8080  17      -       3       False   2023-03-09 10:31:53.000000      N/A     Disabled
+8824    16932   fontdrvhost.ex  0xac8ffe210080  5       -       3       False   2023-03-09 10:31:54.000000      N/A     Disabled
+11988   2836    NVDisplay.Cont  0xac810724b340  34      -       3       False   2023-03-09 10:33:51.000000      N/A     Disabled
+9268    1124    dllhost.exe     0xac8ffb3710c0  0       -       3       False   2023-03-21 14:31:52.000000      2023-03-21 14:31:59.000000      Disabled
+4344    2268    SynTPEnh.exe    0xac8ff7f30080  7       -       3       False   2023-03-21 14:31:52.000000      N/A     Disabled
+5432    3268    ctfmon.exe      0xac8ffc303080  13      -       3       False   2023-03-21 14:31:52.000000      N/A     Disabled
+13476   4468    SECOCL64.exe    0xac8105972080  12      -       3       False   2023-03-21 14:31:52.000000      N/A     Disabled
+15732   968     svchost.exe     0xac810596f080  0       -       0       False   2023-03-21 14:31:53.000000      2023-03-21 14:32:26.000000      Disabled
+6304    968     svchost.exe     0xac8107328080  14      -       3       False   2023-03-21 14:31:53.000000      N/A     Disabled
+9904    2796    sihost.exe      0xac8107b9b0c0  14      -       3       False   2023-03-21 14:31:53.000000      N/A     Disabled
+14576   908     igfxEM.exe      0xac8ffbaad340  3       -       3       False   2023-03-21 14:31:54.000000      N/A     Disabled
+10496   13476   conhost.exe     0xac810a5cb340  2       -       3       False   2023-03-21 14:31:54.000000      N/A     Disabled
+10008   968     svchost.exe     0xac8ffb832080  6       -       3       False   2023-03-21 14:31:55.000000      N/A     Disabled
+15896   2488    taskhostw.exe   0xac8fffe99080  10      -       3       False   2023-03-21 14:31:55.000000      N/A     Disabled
+756     16932   userinit.exe    0xac8ffac37340  0       -       3       False   2023-03-21 14:32:11.000000      2023-03-21 14:32:27.000000      Disabled
+16812   756     explorer.exe    0xac81071de080  100     -       3       False   2023-03-21 14:32:11.000000      N/A     Disabled
+2748    968     svchost.exe     0xac8ffbc3d080  13      -       3       False   2023-03-21 14:32:18.000000      N/A     Disabled
+7388    1124    StartMenuExper  0xac8ffe485080  10      -       3       False   2023-03-21 14:32:32.000000      N/A     Disabled
+8384    1124    RuntimeBroker.  0xac8ffb0da080  3       -       3       False   2023-03-21 14:32:34.000000      N/A     Disabled
+12336   1124    RuntimeBroker.  0xac8ffac58080  14      -       3       False   2023-03-21 14:32:38.000000      N/A     Disabled
+14176   1124    TextInputHost.  0xac8ff9ffb080  12      -       3       False   2023-03-21 14:32:40.000000      N/A     Disabled
+9860    1124    dllhost.exe     0xac8ffe14c340  6       -       3       False   2023-03-21 14:32:49.000000      N/A     Disabled
+6596    16812   msedge.exe      0xac8ffac94080  0       -       3       False   2023-03-21 14:32:57.000000      2023-03-21 14:34:27.000000      Disabled
+1344    968     svchost.exe     0xac8ffe4b8080  4       -       3       False   2023-03-21 14:33:55.000000      N/A     Disabled
+6472    968     svchost.exe     0xac8fd6dc6080  2       -       0       False   2023-03-21 14:34:51.000000      N/A     Disabled
+5540    968     svchost.exe     0xac8ffdd9c340  5       -       0       False   2023-03-21 14:34:52.000000      N/A     Disabled
+9500    2488    taskhostw.exe   0xac8ffaf46340  5       -       3       False   2023-03-21 14:35:26.000000      N/A     Disabled
+14616   1124    PhoneExperienc  0xac8ff20f3080  13      -       3       False   2023-03-21 14:35:42.000000      N/A     Disabled
+10608   1124    RuntimeBroker.  0xac8ffba43080  2       -       3       False   2023-03-21 14:36:02.000000      N/A     Disabled
+14588   968     svchost.exe     0xac81086a7080  3       -       0       False   2023-03-21 14:37:20.000000      N/A     Disabled
+13284   1124    ApplicationFra  0xac8ffd950080  3       -       3       False   2023-03-21 14:38:33.000000      N/A     Disabled
+9448    1124    SystemSettings  0xac8ffcd8d080  23      -       3       False   2023-03-21 14:38:33.000000      N/A     Disabled
+11948   1124    UserOOBEBroker  0xac8fff0ed080  4       -       3       False   2023-03-21 14:38:35.000000      N/A     Disabled
+14992   1124    HxOutlook.exe   0xac81085c9340  19      -       3       False   2023-03-21 14:39:23.000000      N/A     Disabled
+5812    1124    RuntimeBroker.  0xac81071e1080  2       -       3       False   2023-03-21 14:39:24.000000      N/A     Disabled
+9464    1124    HxTsr.exe       0xac81080e2080  16      -       3       False   2023-03-21 14:39:25.000000      N/A     Disabled
+13804   1124    ShellExperienc  0xac8ffb9f7080  14      -       3       False   2023-03-21 14:39:35.000000      N/A     Disabled
+14440   1124    RuntimeBroker.  0xac81071c7080  2       -       3       False   2023-03-21 14:39:36.000000      N/A     Disabled
+15964   1124    SearchApp.exe   0xac8ffb74c080  39      -       3       False   2023-03-21 14:39:49.000000      N/A     Disabled
+5064    16812   msedge.exe      0xac8107fd6080  49      -       3       False   2023-03-21 14:39:59.000000      N/A     Disabled
+13332   5064    msedge.exe      0xac8ff9890080  8       -       3       False   2023-03-21 14:39:59.000000      N/A     Disabled
+11884   5064    msedge.exe      0xac8fffe57340  27      -       3       False   2023-03-21 14:40:04.000000      N/A     Disabled
+13936   5064    msedge.exe      0xac8ffdce3080  16      -       3       False   2023-03-21 14:40:04.000000      N/A     Disabled
+13912   5064    msedge.exe      0xac8ffaf1e080  9       -       3       False   2023-03-21 14:40:04.000000      N/A     Disabled
+7784    5064    msedge.exe      0xac8ffebc7080  19      -       3       False   2023-03-21 14:40:05.000000      N/A     Disabled
+9248    5064    msedge.exe      0xac8ffdcc5080  9       -       3       False   2023-03-21 14:41:04.000000      N/A     Disabled
+16668   1124    RuntimeBroker.  0xac8fff8ed080  6       -       3       False   2023-03-21 14:41:05.000000      N/A     Disabled
+13620   5064    msedge.exe      0xac8ffe9ca080  17      -       3       False   2023-03-21 14:42:21.000000      N/A     Disabled
+3532    5064    msedge.exe      0xac8ff647e080  17      -       3       False   2023-03-21 14:42:27.000000      N/A     Disabled
+12360   5064    msedge.exe      0xac81096cd080  17      -       3       False   2023-03-21 14:43:25.000000      N/A     Disabled
+10212   5064    msedge.exe      0xac8ffceb1080  10      -       3       False   2023-03-21 14:43:27.000000      N/A     Disabled
+17012   5064    msedge.exe      0xac8ff9f59080  17      -       3       False   2023-03-21 14:43:43.000000      N/A     Disabled
+15808   5064    msedge.exe      0xac8109fd6080  17      -       3       False   2023-03-21 14:44:11.000000      N/A     Disabled
+9992    5064    msedge.exe      0xac8ffd62a080  10      -       3       False   2023-03-21 14:44:12.000000      N/A     Disabled
+12140   1124    CompPkgSrv.exe  0xac81067a5080  1       -       3       False   2023-03-21 14:47:20.000000      N/A     Disabled
+5932    1124    SearchApp.exe   0xac8ffb01c080  43      -       3       False   2023-03-21 14:51:40.000000      N/A     Disabled
+15196   5064    msedge.exe      0xac8ffe666340  19      -       3       False   2023-03-21 14:57:13.000000      N/A     Disabled
+4604    5064    msedge.exe      0xac8ffae05080  17      -       3       False   2023-03-21 14:57:32.000000      N/A     Disabled
+14404   16812   rundll32.exe    0xac8108039080  1       -       3       False   2023-03-21 14:58:33.000000      N/A     Disabled
+584     5064    msedge.exe      0xac8ffbbae080  22      -       3       False   2023-03-21 15:00:25.000000      N/A     Disabled
+6112    5064    msedge.exe      0xac81089430c0  19      -       3       False   2023-03-21 15:09:40.000000      N/A     Disabled
+9124    1124    backgroundTask  0xac8ffac35340  20      -       3       False   2023-03-21 15:42:40.000000      N/A     Disabled
+12808   2488    MpCmdRun.exe    0xac8106c4f080  2       -       0       False   2023-03-21 15:43:49.000000      N/A     Disabled
+172051  172051  ,��\�☺��
+        0xac8100fd3080  691091  -       -       True    2023-03-21 15:22:43.000000      N/A     Disabled
+
+Volatility was unable to read a requested page:
+Page error 0x28cf5084 in layer primary (Page Fault at entry 0x0 in table page directory)
+
+        * Memory smear during acquisition (try re-acquiring if possible)
+        * An intentionally invalid page lookup (operating system protection)
+        * A bug in the plugin/volatility3 (re-run with -vvv and file a bug)
+
+No further results will be produced
+PS D:\volatility3-1.0.0\volatility3-1.0.0> Stop-Transcript -Path "$home\Desktop\PowerShellTranscript.txt"
+>> TerminatingError(Stop-Transcript): "A parameter cannot be found that matches parameter name 'Path'."
+Stop-Transcript : A parameter cannot be found that matches parameter name 'Path'.
+At line:1 char:17
++ Stop-Transcript -Path "$home\Desktop\PowerShellTranscript.txt"
++                 ~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Stop-Transcript], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.StopTranscriptCommand
+Stop-Transcript : A parameter cannot be found that matches parameter name 'Path'.
+At line:1 char:17
++ Stop-Transcript -Path "$home\Desktop\PowerShellTranscript.txt"
++                 ~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Stop-Transcript], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.StopTranscriptCommand
+
+PS D:\volatility3-1.0.0\volatility3-1.0.0> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20230321235033
+**********************

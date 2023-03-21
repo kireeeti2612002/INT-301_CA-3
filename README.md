@@ -1,7 +1,7 @@
 # INT-301_CA-3
 Q) Investigate the system run time state of a device (RAM), extract the information present in RAM with the help of volatility Framework.
 
-I have uploaded the files "PowerShellCommands.txt" and  of Commands and outputs of using volatility Framework to extract the information present in memory dump.
+I have uploaded the files "PowerShellCommands.txt" and "PowerShellTranscript.txt" of Commands and outputs of using volatility Framework to extract the information present in memory dump.
 
 Below steps are the process of doing this task:
 
